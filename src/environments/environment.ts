@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBase:'https://servicio-kvbe.herokuapp.com/'
-
+  apiBase:'https://servidor-cl3.herokuapp.com/'
 };
 
 /*
