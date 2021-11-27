@@ -18,7 +18,6 @@ export class ListaAutoComponent implements OnInit {
 
   ngOnInit(): void {
     this.autoService.list('auto/lista').subscribe((data: IAuto[]) => {
-      console.info(data)
       this.auto = data;
     });
   }

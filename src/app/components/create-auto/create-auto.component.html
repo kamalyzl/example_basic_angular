@@ -1,18 +1,35 @@
 <div class="form-auto">
-  <mat-form-field appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput />
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Marca</mat-label>
-    <mat-select formControlName="marca">
-      <mat-option *ngFor="let mar of marca" [value]="mar">
-        {{ mar.nombreMarca }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
+  <form [formGroup]="formulario" (ngSubmit)="add()" class="form-auto">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombreAuto" />
+      <mat-error *ngIf="formulario.controls['nombreAuto'].hasError('required')">
+        Campo descripcion es obligatorio
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Precio</mat-label>
+      <input matInput formControlName="precioAuto" />
+      <mat-error *ngIf="formulario.controls['precioAuto'].hasError('required')">
+        Campo descripcion es obligatorio
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Stock</mat-label>
+      <input matInput formControlName="stockAuto" />
+      <mat-error *ngIf="formulario.controls['stockAuto'].hasError('required')">
+        Campo descripcion es obligatorio
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Marca</mat-label>
+      <mat-select formControlName="marca">
+        <mat-option *ngFor="let mar of marca" [value]="mar">
+          {{ mar.nombreMarca }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-flat-button color="primary">Registrar</button>
+    <br>
+  </form>
 </div>
