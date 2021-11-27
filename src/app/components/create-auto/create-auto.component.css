@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+.form-auto{
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+  align-items: center;
+  width: 100%;
+} 
